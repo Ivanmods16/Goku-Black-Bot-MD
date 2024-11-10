@@ -4,7 +4,7 @@
 
 >🪼𝗗𝗲𝘀𝗮𝗿𝗿𝗼𝗹𝗹𝗮𝗱𝗼𝗿𝗲𝘀: Jostin
 
-## `Goku-Black-Bot-MD-Lite` 
+## `Goku-Black-Bot-MD` 
 <p align="center">
 <img src="https://telegra.ph/file/49baa73f0c2f42ad7e85b.png" alt="Goku-Black-Bot-MD" width="900"/>
 </p>
