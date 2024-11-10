@@ -15,11 +15,11 @@ const __dirname = global.__dirname(import.meta.url)
 
 global.owner = [
 ['595972157130', '𝐈𝐯𝐚𝐧 ⛲', true],
-[''], '', true]]
+['18294868853'], 'Dioneibi', true]]
 
 //BETA: Si quiere evitar escribir el número que será bot en la consola, agregué desde aquí entonces:
 //Sólo aplica para opción 2 (ser bot con código de texto de 8 digitos)
-global.botNumberCode = '' //Ejemplo: +59309090909
+global.botNumberCode = '' //Ejemplo: +59509090909
 global.confirmCode = ''
 
 global.suittag = ['595972157130']
