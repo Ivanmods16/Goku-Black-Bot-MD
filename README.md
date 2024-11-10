@@ -53,7 +53,7 @@ cd && cd Black-termux
 npm start
 ```
 
-**Para obtener otro código QR en Termux**, detén el bot y luego ingresa:
+**Para obtener otro código QR en Termux**
 
 ```bash
 cd && rm -rf Blacksession
