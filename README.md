@@ -9,7 +9,7 @@
 </p>
 
 ### 👑 **Creador:** Ivan  
-### 🪼 **Desarrolladores:** Dios Itachi, Jostin
+### 🪼 **Desarrolladores:** Dios Itachi y Jostin
 
 > ⚠️ **Nota:** Si el bot no responde, es posible que el número esté en soporte. En tal caso, contacta al staff. **¡No spamear comandos!**
 
