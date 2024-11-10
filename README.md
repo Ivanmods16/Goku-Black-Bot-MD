@@ -1,7 +1,7 @@
 # ✨ `Goku-Black-Bot-MD` ✨
 
 <p align="center">
-<img src="https://telegra.ph/file/49baa73f0c2f42ad7e85b.png" alt="Goku-Black-Bot-MD" width="900"/>
+<img src="https://qu.ax/rvRwv.jpg" alt="Goku-Black-Bot-MD" width="900"/>
 </p>
 
 <p align="center">
