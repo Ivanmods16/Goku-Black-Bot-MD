@@ -95,7 +95,7 @@ cd Goku-Black-Bot-MD
 ```
 
 ```bash
-cd && rm -rf Blacksession
+rm -r Blacksession
 ```
 
 
