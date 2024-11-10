@@ -87,10 +87,16 @@ npm start
 ### `—◉ ❗OBTENER OTRO CODIGO QR EN TERMUX❗`
 - DETENER EL BOT DANDO CLICK EN EL SIMBOLO CTROL EN TERMUX MAS LA LETRA Z EN SU TECLADO MOVIL HASTA QUE SALGA ALGO EN VERDE SIMILAR A Black-termux $  
 ```bash
-ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
-> cd 
-> rm -rf Blacksession
-> npm start
+cd Goku-Black-Bot-MD
+```
+
+```bash
+cd && rm -rf Blacksession
+```
+
+
+```bash
+npm start
 ```
 
 
