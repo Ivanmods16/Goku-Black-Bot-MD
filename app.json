@@ -1,0 +1,13 @@
+{
+"name": "Goku-Black-Bot-MD",
+"description": "El Bot Mas Good de WhatsApp",
+"repository": "https://github.com/Ivanmods16/Goku-Black-Bot-MD",
+"logo": "https://telegra.ph/file/49baa73f0c2f42ad7e85b.png",
+"keywords": ["bot", "whatsapp", "whatsapp-bot", "boyslove", "goku-black-bot-md", "good"],
+"buildpacks": [
+{ "url": "heroku/nodejs" },
+{ "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest" },
+{ "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git" },
+{ "url": "https://github.com/bogini/heroku-buildpack-graphicsmagick" }    
+]
+}
