@@ -73,9 +73,12 @@ npm start
 ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 ```bash
 cd
+```
 
 ```bash
-cd Black-termux
+cd Goku-Black-Bot-MD
+```
+
 
 ```bash
 npm start
