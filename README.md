@@ -71,10 +71,15 @@ npm start
 ### `—◉ ✔️ACTIVAR EN CASO DE DETENERSE EN TERMUX✔️`
 ```bash
 ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
-> cd 
-> cd Black-termux
-> npm start
+```bash
+cd
 
+```bash
+cd Black-termux
+
+```bash
+npm start
+```
 **Para obtener otro código QR en Termux**
 
 ```bash
