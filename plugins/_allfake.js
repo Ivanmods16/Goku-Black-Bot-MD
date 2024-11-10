@@ -117,7 +117,7 @@ isForwarded: true,
 forwardedNewsletterMessageInfo: {
 newsletterJid: "120363302472386010@newsletter",
 serverMessageId: 100,
-newsletterName: 'YartexBot-MD ✨',
+newsletterName: 'CLICK AQUI 👇🏻',
 },
 externalAdReply: { 
 showAdAttribution: true,
