@@ -67,12 +67,13 @@ npm update
 npm start
 ```
 
-**Si el bot se detiene en Termux**, utiliza estos comandos para reactivarlo:
 
+### `—◉ ✔️ACTIVAR EN CASO DE DETENERSE EN TERMUX✔️`
 ```bash
-cd && cd Black-termux
-npm start
-```
+ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
+> cd 
+> cd Black-termux
+> npm start
 
 **Para obtener otro código QR en Termux**
 
