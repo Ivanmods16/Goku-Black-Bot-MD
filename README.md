@@ -118,10 +118,8 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 ## `Dueño:Ivan`
 
 ____
-### **`Goku-Black-Bot-MD`**
-
 
 </details>
-------------------
+----
 
 © 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 𝐒𝐢𝐱𝐅𝐢𝐧 𝐓𝐞𝐚𝐦 ⚡︎
