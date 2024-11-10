@@ -37,12 +37,33 @@ Escribe los siguientes comandos uno por uno en Termux para instalar y configurar
 
 ```bash
 cd && termux-setup-storage
+```
+
+```bash
 apt-get update -y && apt-get upgrade -y
+```
+
+```bash
 pkg install -y git nodejs ffmpeg imagemagick && pkg install yarn 
+```
+
+```bash
 git clone https://github.com/Ivanmods16/Goku-Black-Bot-MD.git && cd Goku-Black-Bot-MD
+```
+
+```bash
 yarn install
+```
+
+```bash
 npm install
+```
+
+```bash
 npm update
+```
+
+```bash
 npm start
 ```
 
