@@ -84,12 +84,16 @@ npm start
 ```
 
 
-**Para obtener otro código QR en Termux**
-
+### `—◉ ❗OBTENER OTRO CODIGO QR EN TERMUX❗`
+- DETENER EL BOT DANDO CLICK EN EL SIMBOLO CTROL EN TERMUX MAS LA LETRA Z EN SU TECLADO MOVIL HASTA QUE SALGA ALGO EN VERDE SIMILAR A Black-termux $  
 ```bash
-cd && rm -rf Blacksession
-npm start
+ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
+> cd 
+> rm -rf Blacksession
+> npm start
 ```
+
+
 
 ---
 
