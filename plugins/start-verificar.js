@@ -1,35 +1,55 @@
-import { createHash } from 'crypto' 
-
+import { createHash } from 'crypto'
 let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i
 let handler = async function (m, { conn, text, usedPrefix, command }) {
-let user = global.db.data.users[m.sender]
-let name2 = conn.getName(m.sender)
-let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let pp = await conn.profilePictureUrl(who, 'image').catch(_ => yartexImg.getRandom())
-
-if (user.registered === true) return conn.sendMessage(m.chat, { text: `${dis}Ya esta registrado como *${user.name}*\n\nSi desea hacer un nuevo registro ✨ debe de usar el comando:\n*${usedPrefix}delregistro* \`Número de serie\`\n\n🙂 Si no conoce su número de serie, use el comando:\n*${usedPrefix}numserie*`, ...fake }, { quoted: m })
-if (!Reg.test(text)) return conn.reply(m.chat, `${dis}\`Uso correcto del comando:\`\n*${usedPrefix + command}* nombre.edad\n\n🩷 *Ejemplo:*\n*${usedPrefix + command}* GataDios.20`, m)
-let [_, name, splitter, age] = text.match(Reg)
-if (!name) return conn.reply(m.chat, `🫠 *No hemos econtrado su nombre, intente de nuevo.*`, m)
-if (!age) return conn.reply(m.chat, `🤔 *No hemos econtrado su edad, intente de nuevo.*`, m)
-if (name.length >= 31) return conn.reply(m.chat, `😩 *Use un nombre más corto por favor.*`, m)
-age = parseInt(age)
-if (age >= 61) return conn.reply(m.chat, `🤷‍♀️ *Use una edad más joven por favor.*`, m)
-if (age <= 10) return conn.reply(m.chat, `😆 *Use una edad mayor por favor.*`, m)
-user.name = name.trim()
-user.age = age
-user.regTime = + new Date
-user.registered = true
-let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 6)	
-m.react('✨') 
-await conn.sendMessage(m.chat, { image: { url: pp }, caption: `*║⫘⫘⫘⫘⫘⫘✨*
-*║ ${dis}ＲＥＧＩＳＴＲＯ*
-*║ .・゜゜・・゜゜・．*
-*║* 💠 *Nombre* ${name}
-*║* 💠 *Edad* ${age} años
-*║* 💠 *Número de serie* \`${sn}\`
-*║⫘⫘⫘⫘⫘⫘✨*`, mentions: [m.sender], ...fake }, { quoted: m })
-  
+  let user = global.db.data.users[m.sender]
+  let name2 = conn.getName(m.sender)
+  if (user.registered === true) throw `「👑」 *Ya estas registrado*\n\n◉ 🍟 ¿Quiere volver a registrarse?\n\n◉ 🍭 Para volver a registrarse *elimine su registro* haciendo uso del comando\n*${usedPrefix}unreg*`
+  if (!Reg.test(text)) throw `「👑」 *Formato incorrecto*\n\n◉ 🍟 *${usedPrefix + command} nombre.edad*\n\n> [ 💡 ] Ejemplo : *${usedPrefix + command}* ${name2}.18`
+  let [_, name, splitter, age] = text.match(Reg)
+  if (!name) throw '「👑」 *El nombre no puede estar vacio*'
+  if (!age) throw '「👑」 *La edad no puede estar vacía*'
+  if (name.length >= 30) throw '*「👑」 *El nombre es demasiado largo*' 
+  age = parseInt(age)
+  if (age > 100) throw '*Pellé quiere jugar con el bot?*'
+  if (age < 5) throw '*Eres menor no  puedes registrarte en BaileyBot-MD*'
+  user.name = name.trim()
+  user.age = age
+  user.regTime = + new Date
+  user.registered = true
+  global.db.data.users[m.sender].money += 600
+  global.db.data.users[m.sender].limit += 20
+  global.db.data.users[m.sender].exp += 500
+  global.db.data.users[m.sender].joincount += 100
+ let sn = createHash('md5').update(m.sender).digest('hex').slice(0, 6)    
+m.react('📩') 
+let regbot = `👤 𝗥 𝗘 𝗚 𝗜 𝗦 𝗧 𝗥 𝗢 👤
+•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•
+『💭』𝗡𝗼𝗺𝗯𝗿𝗲: ${name}
+『✨️』𝗘𝗱𝗮𝗱: ${age} años
+•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•
+『🎁』𝗥𝗲𝗰𝗼𝗺𝗽𝗲𝗻𝘀𝗮𝘀:
+• 10 Estrellas 🌟
+• 5 Coins 🪙
+• 245 Experiencia 💸
+• 12 Tokens 💰
+•┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄•
+`
+conn.sendMessage(m.chat, {
+text: regbot,
+contextInfo: {
+externalAdReply: {
+title: '༺『✅𝆺𝅥 𝗥𝗘𝗚𝗜𝗦𝗧𝗥𝗔𝗗𝗢 𝆹𝅥✅』༻',
+body: wm, 
+thumbnaiUrl: md, 
+sourceUrl: channel,
+mediaType: 1,
+showAdAttribution: true,
+renderLargerThumbnail: true,
+}}}, { quoted: fkontak })
+//await m.reply(`${sn}`)        
 }
-handler.command = /^(ver(ify|ificar)|reg(istrar)?)$/i
+handler.help = ['reg']
+handler.tags = ['rg']
+handler.command = ['verify', 'verificar', 'reg', 'register', 'registrar'] 
+
 export default handler
