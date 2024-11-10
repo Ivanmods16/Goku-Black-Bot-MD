@@ -80,6 +80,8 @@ cd Black-termux
 ```bash
 npm start
 ```
+
+
 **Para obtener otro código QR en Termux**
 
 ```bash
