@@ -31,7 +31,7 @@ Este bot cuenta con múltiples funciones que puedes activar en diversas platafor
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://dashboard.render.com/blueprint/new?repo=https%3A%2F%2Fgithub.com%2FIvanmods16%2FGoku-Black-Bot-MD)
 
-### 📱 `Activación en Termux`
+### 📱 `Instalacion en Termux`
 
 Escribe los siguientes comandos uno por uno en Termux para instalar y configurar el bot:
 
