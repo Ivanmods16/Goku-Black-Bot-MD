@@ -109,7 +109,7 @@ ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
 
 
 ## `🌼COLABORADORES DEL BOT🌼` 
-<a href="[https://github.com/Eliasivan15]"><img src="https://github.com/Eliasivan15.png" width="100" height="100" alt="Elías"/></a>
+<a href="[https://github.com/Eliasivan]"><img src="https://github.com/Eliasivan.png" width="100" height="100" alt="Elías"/></a>
 <a href="[https://github.com/Dios-Itachi]"><img src="https://github.com/Dios-Itachi.png" width="100" height="100" alt="Dioneibi"/></a>
 <td align="center"><a 
 <a href="[https://github.com/Jostin207]"><img src="https://github.com/Jostin207.png" width="100" height="100" alt="Jostin"/></a>
