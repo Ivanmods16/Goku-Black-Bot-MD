@@ -14,7 +14,7 @@ global.__filename = function filename(pathURL = import.meta.url, rmPrefix = plat
 const __dirname = global.__dirname(import.meta.url)
 
 global.owner = [
-['595972157130', '𝐈𝐯𝐚𝐧 ⛲', true],
+['595992667005', '𝐈𝐯𝐚𝐧 ⛲', true],
 ['18294868853', 'Dioneibi', true]]
 
 //BETA: Si quiere evitar escribir el número que será bot en la consola, agregué desde aquí entonces:
