@@ -282,7 +282,7 @@ try {
 const chtitle = await conn.newsletterMetadata(text.includes("@newsletter") ? "jid" : "invite", text.includes("@newsletter") ? ch : channelUrl).then(data => data.name).catch(e => null)
 await conn.newsletterUpdatePicture(ch, media)
 // await conn.reply(m.chat, `🚩 El bot ha cambiando la imagen del canal *${chtitle}* con éxito.`, m, rcanal) 
-await conn.sendMessage(ch, { text: `🚩YaemoriBot ha cambiando la imagen del canal *${chtitle}* con éxito.`, contextInfo: {
+await conn.sendMessage(ch, { text: `🚩YagamiBot ha cambiando la imagen del canal *${chtitle}* con éxito.`, contextInfo: {
 externalAdReply: {
 title: "【 🔔 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗖𝗜𝗢́𝗡 🔔 】",
 body: '✨️ Nueva imagen de perfil del canal.',
