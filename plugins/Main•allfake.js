@@ -28,12 +28,12 @@ console.log(`Error : ${e}`)
 }}
 
 //creador y otros
-global.creador = 'Wa.me/5493876432076'
+global.creador = 'Wa.me/51946509137'
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
-global.asistencia = 'https://wa.me/message/O4QPPHZOFDOJI1'
-global.namechannel = '© All Rightd Reserved • YaemoriBot'
-global.listo = '✨️ *Aquí tienes ฅ^•ﻌ•^ฅ*'
-global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
+global.asistencia = 'wa.me/18294868853'
+global.namechannel = 'Yagami-Bot-MD 🌹'
+global.listo = '🌱 *Aquí tienes ฅ^•ﻌ•^ฅ*'
+global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/FfneO.jpg')
 
 //ids channel
 global.channelid = '120363276986902836@newsletter'
@@ -64,19 +64,19 @@ global.wait = '🚀 Cargando...'
 global.emojis = [emoji, emoji2, emoji3, emoji4, emoji5].getRandom()
 
 //Enlaces
-var canal = 'https://whatsapp.com/channel/0029VaQD7LAJP216tu9liI2A'
-var canal2 = 'https://whatsapp.com/channel/0029VayCRH2Jf05m1wzaBi1Y'
-var canal3 = 'https://whatsapp.com/channel/0029Va4QjH7DeON0ePwzjS1A'
-var canal4 = 'https://whatsapp.com/channel/0029VakUvreFHWpyWUr4Jr0g'
-var git = 'https://github.com/Dev-Diego' 
-var youtube = 'https://www.youtube.com/@OfcDiego' 
-var github = 'https://github.com/Dev-Diego/YaemoriBot-MD'  
-var dash = 'https://dash.skyultraplus.com'
-var panel = 'https://panel.skyultraplus.com'
-var status = 'https://estado.skyultraplus.com'
-var discord = 'https://discord.gg/zvKgtc2RBc'
-let tiktok = 'https://tiktok.com/@dev_diego'
-let correo = 'theyaemoribot@gmail.com'
+var canal = ''
+var canal2 = ''
+var canal3 = ''
+var canal4 = ''
+var git = 'https://github.com/Ivanmods16' 
+var youtube = '' 
+var github = 'https://github.com/Ivanmods16/Yagami-Bot-MD'  
+var dash = ''
+var panel = ''
+var status = ''
+var discord = ''
+let tiktok = ''
+let correo = ''
 
 global.redes = [canal, canal2, canal3, canal4, git, youtube, github, dash, panel, status, discord, tiktok, correo].getRandom()
 
@@ -109,9 +109,9 @@ global.fake = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo
 }}, { quoted: m }
 
 global.icono = [ 
-'https://qu.ax/jqbRA.jpg',
-'https://qu.ax/scObN.jpg',
-'https://qu.ax/nqXmE.jpg'
+'https://qu.ax/uhHNO.jpg',
+'https://qu.ax/bPcSF.jpg',
+'https://qu.ax/JCwVr.jpg'
 ].getRandom()
 
 global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, serverMessageId: 100, newsletterName: channelRD.name, }, externalAdReply: { showAdAttribution: true, title: namebot, body: dev, mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, }, }}
