@@ -36,9 +36,9 @@ global.listo = '✨️ *Aquí tienes ฅ^•ﻌ•^ฅ*'
 global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
 
 //ids channel
-global.channelid = '120363370415738881@newsletter'
-global.canalIdYL = ["120363160031023229@newsletter", "120363370415738881@newsletter", "120363263466636910@newsletter", "120363307382381547@newsletter", "120363301598733462@newsletter", "120363371018732371@newsletter"]
-global.canalNombreYL = ["INFINITY-WA 💫", "YaemoriBot - Test 🍄", "© All Rightd Reserved • YaemoriBot", "Megumin Bot - Channel 💥", "Sky Ultra Plus ☁️", "Hutao - Test ❤️‍🔥"]
+global.channelid = '120363276986902836@newsletter'
+global.canalIdYL = ["120363276986902836@newsletter", "120363276986902836@newsletter", "120363276986902836@newsletter", "120363276986902836@newsletter", "120363276986902836@newsletter", "120363276986902836@newsletter"]
+global.canalNombreYL = ["Yagami-Bot-MD 🐬", "Goku-Black-Bot-MD 💥", "Yagami-Bot-MD 🪻", "Goku-Black-Bot-MD -Lite ✨", "HOSTING PY", "JY-HYUN-BOT 🌹"]
 global.channelRD = await getRandomChannel()
 
 //fechas
