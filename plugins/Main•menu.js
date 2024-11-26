@@ -34,7 +34,7 @@ let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.a
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
 const img = ['https://i.ibb.co/dWPC0Gw/Jyhyun.jpg', 'https://i.ibb.co/dWPC0Gw/Jyhyun.jpg', 'https://i.ibb.co/dWPC0Gw/Jyhyun.jpg']
 let menu = `*˚₊·˚₊· ͟͟͞͞➳❥ ${taguser}*
-*˚₊·˚₊· ͟͟͞͞➳❥* YAGAMI-BOT-MD  🌻✨
+*˚₊·˚₊· ͟͟͞͞➳❥* YAGAMI-BOT-MD 🌱
  
 ╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒   ⭒*
 ┊ ‹‹ *Categoria* :: *Info User*
