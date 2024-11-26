@@ -24,7 +24,7 @@ let grupos = `*Hola!, te invito a unirte a los grupos oficiales de del Bot para 
 ♡ Canal :
 *✰* ${channel}
 
-♡ YaemoriBot - Test :
+♡ Yagami - Test :
 *✰* ${channel2}
 
 ♡ Infinity-Wa :
