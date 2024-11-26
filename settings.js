@@ -35,15 +35,15 @@ global.libreria = 'Baileys'
 global.baileys = 'V 6.7.5'
 global.vs = '2.0.7'
 global.vsJB = '5.0'
-global.nameqr = '🎧ྀི Y̴̶̴a̴̶̴g̴̶̴a̴̶̴m̴̶̴i̴̷̴-̴̸̴B̴̴̴o̴̷̴t̴̷̴-̴̴̴M̴̴̴D̴̴̴ ᶻ 𝗓 𐰁 .ᐟ'
+global.nameqr = '⟁⧫ Yᴀɢᴀᴍɪ-Bᴏᴛ-Mᴅ ⧫⟁'
 global.namebot = '𝑦𝑎𝑔𝑎𝑚𝑖 𝑏𝑜𝑡 ᰔᩚ'
 global.sessions = 'YagamiSession'
 global.jadi = 'YagamiJadiBot'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.packname = '⪛✰ 𝐘𝐚𝐠𝐚𝐦𝐢 𝐁𝐨𝐭 - 𝐌𝐃 ✰⪜'
-global.botname = 'Yagami Bot - MD 🌱'
+global.packname = '🎧ྀི Y̴̶̴a̴̶̴g̴̶̴a̴̶̴m̴̶̴i̴̷̴-̴̸̴B̴̴̴o̴̷̴t̴̷̴-̴̴̴M̴̴̴D̴̴̴ ᶻ 𝗓 𐰁 .ᐟ'
+global.botname = ''⪛✰ 𝐘𝐚𝐠𝐚𝐦𝐢 𝐁𝐨𝐭 - 𝐌𝐃 ✰⪜''
 global.wm = 'YagamiBot-MD 🌳'
 global.author = 'By Ivan 👑'
 global.dev = '© ⍴᥆ᥕᥱrᥱძ ᑲᥡ 𝚒𝚟𝚊𝚗 ✌︎'
