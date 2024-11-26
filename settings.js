@@ -43,7 +43,7 @@ global.jadi = 'YagamiJadiBot'
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.packname = '🎧ྀི Y̴̶̴a̴̶̴g̴̶̴a̴̶̴m̴̶̴i̴̷̴-̴̸̴B̴̴̴o̴̷̴t̴̷̴-̴̴̴M̴̴̴D̴̴̴ ᶻ 𝗓 𐰁 .ᐟ'
-global.botname = ''⪛✰ 𝐘𝐚𝐠𝐚𝐦𝐢 𝐁𝐨𝐭 - 𝐌𝐃 ✰⪜''
+global.botname = '⪛✰ 𝐘𝐚𝐠𝐚𝐦𝐢 𝐁𝐨𝐭 - 𝐌𝐃 ✰⪜'
 global.wm = 'YagamiBot-MD 🌳'
 global.author = 'By Ivan 👑'
 global.dev = '© ⍴᥆ᥕᥱrᥱძ ᑲᥡ 𝚒𝚟𝚊𝚗 ✌︎'
