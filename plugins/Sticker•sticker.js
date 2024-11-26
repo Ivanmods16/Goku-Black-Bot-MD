@@ -6,8 +6,8 @@ import { webp2png } from '../lib/webp2mp4.js'
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 
 let name = conn.getName(m.sender);
-let text1 = `© YaemoriBot-MD\nAuthor:\nFecha:\nDia:\nCreador:`
-let text2 = `${vs}\n${name}\n${fecha}\n${dia}\nDevDiego`
+let text1 = `© YagamiBot-MD\nAuthor:\nFecha:\nDia:\nCreador:`
+let text2 = `${vs}\n${name}\n${fecha}\n${dia}\nIvan`
 let stiker = false
 try {
 let q = m.quoted ? m.quoted : m
@@ -41,7 +41,7 @@ else return m.reply(`💫 El url es incorrecto`)
 console.error(e)
 if (!stiker) stiker = e
 } finally {
-if (stiker) conn.sendFile(m.chat, stiker, 'sticker.webp', '',m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: `Yaemori Bot - MD 🚩`, body: `✡︎ Sticker By • YaemoriBot`, mediaType: 2, sourceUrl: redes, thumbnail: icons}}}, { quoted: m })
+if (stiker) conn.sendFile(m.chat, stiker, 'sticker.webp', '',m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: `Yagami Bot - MD 🚩`, body: `✡︎ Sticker By • YagamiBot`, mediaType: 2, sourceUrl: redes, thumbnail: icons}}}, { quoted: m })
 
 else return conn.reply(m.chat, '⚠️ *_La conversión ha fallado, intenta enviar primero imagen/video/gif y luego responde con el comando._*', m, rcanal)
 
