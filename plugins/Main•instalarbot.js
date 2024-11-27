@@ -1,6 +1,6 @@
 var handler  = async (m, { conn }) => {
 
-let texto = `🚩 *Instalación de Ai Yaemori*
+let texto = `🚩 *Instalación de YagamiBot*
 
 ⬡ Dudas: ${creador}
 ⬡ Tutoríal: https://youtu.be/0JtOm_ie4CQ?si=kbL823AQmUhC3PmC
