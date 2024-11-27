@@ -19,7 +19,7 @@ global.confirmCode = ''
 global.owner = [
    ['595992667005', 'Creador 👑', true],
    ['51946509137', 'Owner 🍭', true],
-   ['18294868853', 'Dioneibi, true],
+   ['18294868853', 'Dioneibi', true],
    ['51950148255', 'Jose Elber', true]
 ]
 
