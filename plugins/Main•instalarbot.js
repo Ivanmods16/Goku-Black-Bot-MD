@@ -7,9 +7,9 @@ let texto = `🚩 *Instalación de YagamiBot*
 
 *Comandos de instalación via cloudshell 🌱*
 
-git clone https://github.com/Dev-Diego/YaemoriBot-MD
+git clone https://github.com/ivanmods16/YagamiBot-MD
 
-cd YaemoriBot-MD && yarn install && npm install 
+cd YagamiBot-MD && yarn install && npm install 
 
 npm start
 
