@@ -19,7 +19,8 @@ global.confirmCode = ''
 global.owner = [
    ['595992667005', 'Creador 👑', true],
    ['51946509137', 'Owner 🍭', true],
-   ['18294868853']
+   ['18294868853'], 'Dioneibi, true],
+   ['51950148255'], 'Jose Elber', true]
 ]
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
@@ -33,7 +34,7 @@ global.prems = []
 global.isBaileysFail = false
 global.libreria = 'Baileys'
 global.baileys = 'V 6.7.5'
-global.vs = '2.0.7'
+global.vs = '1.0.0'
 global.vsJB = '5.0'
 global.nameqr = '⟁⧫ Yᴀɢᴀᴍɪ-Bᴏᴛ-Mᴅ ⧫⟁'
 global.namebot = '✩ 🅈⁞֟፝͜🄰⁞֟፝͜🄶⁞֟፝͜🄰⁞֟፝͜🄼⁞֟፝͜🄸⁞֟፝   🄱⁞֟፝͜🄾⁞֟፝͜🅃⁞֟፝  ✩'
@@ -42,11 +43,11 @@ global.jadi = 'YagamiJadiBot'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.packname = '🅈⃓꯭⃛🄰⃓꯭⃛፝֟͝🄶⃓꯭⃛🄰⃓꯭⃛፝֟͝🄼⃓꯭⃛🄸⃓꯭⃛፝֟͝🄱⃓꯭⃛🄾⃓꯭⃛፝֟͝🅃'
+global.packname = '🅈⃓꯭⃛🄰⃓꯭⃛፝֟͝🄶⃓꯭⃛🄰⃓꯭⃛፝֟͝🄼⃓⃓꯭꯭⃛⃛፝֟͝🄸⃓꯭⃛  🄱⃓⃓꯭꯭⃛፝֟⃛͝🄾⃓꯭⃛፝֟͝🅃. 🄼⃓꯭⃛፝֟͝🄳'
 global.botname = '✩ 🅈⁞֟፝͜🄰⁞֟፝͜🄶⁞֟፝͜🄰⁞֟፝͜🄼⁞֟፝͜🄸⁞֟፝   🄱⁞֟፝͜🄾⁞֟፝͜🅃⁞֟፝  ✩'
 global.wm = 'YagamiBot-MD 🍟'
 global.author = 'By Ivan 👑'
-global.dev = '© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɪᴠᴀɴ 🍂'
+global.dev = '© 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗯𝘆 𝗘𝗹𝗶𝗮𝘀 𝗜𝘃𝗮𝗻'
 global.textbot = 'Yagami : Ivan 🚩'
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
@@ -62,13 +63,13 @@ global.avatar = fs.readFileSync('./src/img/avatar_contact.jpg')
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.grupo = '' //Yagami
-global.grupo2 = ''
-global.grupo3 = ''
+global.grupo = 'https://chat.whatsapp.com/IcqUAk4jmzNDOkJV2lnQbm' //Yagami bot md
+global.grupo2 = 'https://chat.whatsapp.com/Igsky5kNI7cDMsBJU6gcKB'
+global.grupo3 = 'https://chat.whatsapp.com/EyIKeHl16JNB4J6O4KMjpD' // Colaboración yagami y Jy Hyun
 global.channel = ''
 global.channel2 = ''
-global.channel3 = ''
-global.md = '' 
+global.channel3 = 'https://whatsapp.com/channel/0029VaoRpDF5PO190ZCItg3D'
+global.md = 'https://github.com/Ivanmods16/Yagami-Bot-MD' 
 global.yt = ''
 global.tiktok = ''
 global.correo = ''
@@ -81,11 +82,7 @@ global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(fa
 
 global.ch = {
 ch1: '120363276986902836@newsletter',
-ch2: '120363276986902836@newsletter',
-ch3: '120363276986902836@newsletter',
-ch4: '120363276986902836@newsletter',
-ch5: '120363276986902836@newsletter',
-ch6: '120363276986902836@newsletter',
+ch2: '120363337523216426@newsletter',
 }
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
