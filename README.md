@@ -130,4 +130,3 @@ Si tienes dudas, puedes contactar directamente con Ivan:
 © 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 𝐒𝐢𝐱𝐅𝐢𝐧 𝐓𝐞𝐚𝐦 ⚡︎
 
 - **Canal de WhatsApp:** [`Aquí`](https://whatsapp.com/channel/0029VaYh3Zm4dTnQKQ3VLT0h)
-- 
