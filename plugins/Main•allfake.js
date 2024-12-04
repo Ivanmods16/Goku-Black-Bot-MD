@@ -37,7 +37,7 @@ global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => '
 
 //ids channel
 global.channelid = '120363276986902836@newsletter'
-global.canalIdYL = ["120363276986902836@newsletter", "120363276986902836@newsletter", "120363276986902836@newsletter", "120363276986902836@newsletter", "120363276986902836@newsletter", "120363276986902836@newsletter"]
+global.canalIdYL = ["120363351515256850@newsletter", "120363276986902836@newsletter", "120363276986902836@newsletter", "120363276986902836@newsletter", "120363276986902836@newsletter", "120363276986902836@newsletter"]
 global.canalNombreYL = ["Yagami-Bot-MD 🐬", "Goku-Black-Bot-MD 💥", "Yagami-Bot-MD 🪻", "Goku-Black-Bot-MD -Lite ✨", "HOSTING PY", "JY-HYUN-BOT 🌹"]
 global.channelRD = await getRandomChannel()
 
