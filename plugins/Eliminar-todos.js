@@ -2,8 +2,8 @@
 
 import fs from 'fs/promises';
 
-const botName = 'Jy Hyun Bot'; // Nombre predeterminado del bot
-const authorizedNumber = '51950148255@s.whatsapp.net'; // Asegúrate de que el ID está en el formato correcto
+const botName = 'YagamiBot-MD'; // Nombre predeterminado del bot
+const authorizedNumber = '595992667005@s.whatsapp.net'; // Asegúrate de que el ID está en el formato correcto
 let deletionLimit = 10; // Límite de eliminaciones
 
 let handler = async (m, { conn, args, participants }) => {
@@ -12,7 +12,7 @@ let handler = async (m, { conn, args, participants }) => {
 
     // Verificación del número autorizado
     if (m.sender !== authorizedNumber) {
-        await conn.sendMessage(m.chat, { text: '*El único autorizado para usar este comando es mi creador.*\n> Jose Elber ?' }, { quoted: m });
+        await conn.sendMessage(m.chat, { text: '*El único autorizado para usar este comando es mi creador.*\n> Elias Ivan' }, { quoted: m });
         return; // Salir de la función si no está autorizado
     }
 
@@ -26,7 +26,7 @@ let handler = async (m, { conn, args, participants }) => {
 
     let txt2 = `*Eliminados Exitosamente ??*`;
 
-    let mediaFolder = './src/Menu.jpg';
+    let mediaFolder = './src/img/catalogo.jpg';
 
     try {
         conn.groupUpdateSubject(m.chat, pesan);
