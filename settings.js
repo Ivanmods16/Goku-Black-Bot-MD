@@ -17,10 +17,8 @@ global.confirmCode = ''
 //*▬▬▬▬▬▬《⚡》▬▬▬▬▬▬▬▬▬▬▬*
 
 global.owner = [
-   ['595992667005', 'Creador 👑', true],
-   ['51946509137', 'Owner 🍭', true],
-   ['18294868853', 'Dioneibi', true],
-   ['51950148255', 'Jose Elber', true]
+   ['593979133620', 'Creador 👑', true],
+   ['595992667005', 'Ivan Mods', true]
 ]
 
 //*▬▬▬▬▬▬《🏝️》▬▬▬▬▬▬▬▬▬▬▬*
@@ -43,12 +41,12 @@ global.jadi = 'YagamiJadiBot'
 
 //*▬▬▬▬▬▬《🏵️》▬▬▬▬▬▬▬▬▬▬▬*
 
-global.packname = '🅈⃓꯭⃛🄰⃓꯭⃛፝֟͝🄶⃓꯭⃛🄰⃓꯭⃛፝֟͝🄼⃓⃓꯭꯭⃛⃛፝֟͝🄸⃓꯭⃛  🄱⃓⃓꯭꯭⃛፝֟⃛͝🄾⃓꯭⃛፝֟͝🅃. 🄼⃓꯭⃛፝֟͝🄳'
-global.botname = '✩ 🅈⁞֟፝͜🄰⁞֟፝͜🄶⁞֟፝͜🄰⁞֟፝͜🄼⁞֟፝͜🄸⁞֟፝   🄱⁞֟፝͜🄾⁞֟፝͜🅃⁞֟፝  ✩'
-global.wm = 'YagamiBot-MD 🍟'
+global.packname = 'Onyx bot '
+global.botname = 'Onyx Bot'
+global.wm = 'OnyxBot'
 global.author = 'By Ivan 👑'
-global.dev = '© 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗯𝘆 𝗘𝗹𝗶𝗮𝘀 𝗜𝘃𝗮𝗻'
-global.textbot = 'Yagami : Ivan 🚩'
+global.dev = '𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗯𝘆 Ricardo'
+global.textbot = 'Onyx : Ricardo 🚩'
 
 //*▬▬▬▬▬▬《🍄》▬▬▬▬▬▬▬▬▬▬▬*
 
@@ -63,13 +61,13 @@ global.avatar = fs.readFileSync('./src/img/avatar_contact.jpg')
 
 //*▬▬▬▬▬▬《💫》▬▬▬▬▬▬▬▬▬▬▬*
 
-global.grupo = 'https://chat.whatsapp.com/IcqUAk4jmzNDOkJV2lnQbm' //Yagami bot md
-global.grupo2 = 'https://chat.whatsapp.com/Igsky5kNI7cDMsBJU6gcKB'
-global.grupo3 = 'https://chat.whatsapp.com/EyIKeHl16JNB4J6O4KMjpD' // Colaboración yagami y Jy Hyun
+global.grupo = '' //onyx
+global.grupo2 = ''
+global.grupo3 = ''
 global.channel = ''
 global.channel2 = ''
-global.channel3 = 'https://whatsapp.com/channel/0029VaoRpDF5PO190ZCItg3D'
-global.md = 'https://github.com/Ivanmods16/Yagami-Bot-MD' 
+global.channel3 = ''
+global.md = '' 
 global.yt = ''
 global.tiktok = ''
 global.correo = ''
@@ -81,8 +79,8 @@ global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(fa
 //*▬▬▬▬▬▬《🐬》▬▬▬▬▬▬▬▬▬▬▬▬*
 
 global.ch = {
-ch1: '120363351515256850@newsletter',
-ch2: '120363351515256850@newsletter',
+ch1: '',
+ch2: '',
 }
 
 //*▬▬▬▬▬▬《🕹️》▬▬▬▬▬▬▬▬▬▬▬▬*
