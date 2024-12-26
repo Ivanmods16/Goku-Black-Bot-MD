@@ -45,7 +45,7 @@ global.packname = 'FN bot '
 global.botname = 'FN Bot'
 global.wm = 'FNBot'
 global.author = 'By Ivan 👑'
-global.dev = '𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗯𝘆 Ricardo'
+global.dev = 'FN BOT '
 global.textbot = 'FN : Ricardo 🚩'
 
 //*▬▬▬▬▬▬《🍄》▬▬▬▬▬▬▬▬▬▬▬*
