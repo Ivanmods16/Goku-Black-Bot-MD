@@ -2,11 +2,11 @@
 
 var handler = async m => 
 
-conn.reply(m.chat, `*TODOS USTEDES SERA HACKEADOS DIGAN SOY GAY Y NO SERAN HACKEADOS*`, m, rcanal, )
+conn.reply(m.chat, `*YA ESTOY TODO AMO RICARDO ❤️*`, m, rcanal, )
 
-handler.help = ['hack']
-handler.tags = ['hack']
-handler.command = /^hack$/i
+handler.help = ['rica']
+handler.tags = ['rica']
+handler.command = /^ric$/i
 
 handler.limit = true
 handler.register = true
