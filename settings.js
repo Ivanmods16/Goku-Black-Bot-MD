@@ -44,7 +44,7 @@ global.jadi = 'YagamiJadiBot'
 global.packname = 'FN bot '
 global.botname = 'FN Bot'
 global.wm = 'FNBot'
-global.author = 'By Ivan 👑'
+global.author = 'By Ricardo 👑'
 global.dev = 'FN BOT '
 global.textbot = 'FN : Ricardo 🚩'
 
