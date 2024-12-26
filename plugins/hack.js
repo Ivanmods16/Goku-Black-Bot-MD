@@ -6,7 +6,7 @@ conn.reply(m.chat, `*YA ESTOY TODO AMO RICARDO ❤️*`, m, rcanal, )
 
 handler.help = ['rica']
 handler.tags = ['rica']
-handler.command = /^ric$/i
+handler.command = /^rica$/i
 
 handler.limit = true
 handler.register = true
