@@ -34,19 +34,19 @@ global.libreria = 'Baileys'
 global.baileys = 'V 6.7.5'
 global.vs = '1.0.0'
 global.vsJB = '5.0'
-global.nameqr = '⟁⧫ONYX BOT⧫⟁'
-global.namebot = 'Onyx Bot'
+global.nameqr = '⟁⧫FN BOT⧫⟁'
+global.namebot = 'FN Bot'
 global.sessions = 'YagamiSession'
 global.jadi = 'YagamiJadiBot'
 
 //*▬▬▬▬▬▬《🏵️》▬▬▬▬▬▬▬▬▬▬▬*
 
-global.packname = 'Onyx bot '
-global.botname = 'Onyx Bot'
-global.wm = 'OnyxBot'
+global.packname = 'FN bot '
+global.botname = 'FN Bot'
+global.wm = 'FNBot'
 global.author = 'By Ivan 👑'
 global.dev = '𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗯𝘆 Ricardo'
-global.textbot = 'Onyx : Ricardo 🚩'
+global.textbot = 'FN : Ricardo 🚩'
 
 //*▬▬▬▬▬▬《🍄》▬▬▬▬▬▬▬▬▬▬▬*
 
@@ -61,7 +61,7 @@ global.avatar = fs.readFileSync('./src/img/avatar_contact.jpg')
 
 //*▬▬▬▬▬▬《💫》▬▬▬▬▬▬▬▬▬▬▬*
 
-global.grupo = '' //onyx
+global.grupo = '' //FN
 global.grupo2 = ''
 global.grupo3 = ''
 global.channel = ''
