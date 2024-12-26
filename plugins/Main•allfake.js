@@ -28,17 +28,17 @@ console.log(`Error : ${e}`)
 }}
 
 //creador y otros
-global.creador = 'Wa.me/51946509137'
+global.creador = 'Wa.me/593979133620'
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
-global.asistencia = 'wa.me/18294868853'
-global.namechannel = 'Yagami-Bot-MD 🌹'
-global.listo = '🌱 *Aquí tienes ฅ^•ﻌ•^ฅ*'
+global.asistencia = 'wa.me/595992667005'
+global.namechannel = 'onyx bot 🤖'
+global.listo = '🌱 *Aquí tienes onyx bot*'
 global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/FfneO.jpg')
 
 //ids channel
-global.channelid = '120363351515256850@newsletter'
-global.canalIdYL = ["120363351515256850@newsletter", "120363276986902836@newsletter", "120363276986902836@newsletter", "120363276986902836@newsletter", "120363276986902836@newsletter", "120363276986902836@newsletter"]
-global.canalNombreYL = ["Yagami-Bot-MD 🐬", "Goku-Black-Bot-MD 💥", "Yagami-Bot-MD 🪻", "Goku-Black-Bot-MD -Lite ✨", "HOSTING PY", "JY-HYUN-BOT 🌹"]
+global.channelid = ''
+global.canalIdYL = ["", "", "", "", "", ""]
+global.canalNombreYL = ["onyx bot powerd ricardo", "Onyx", "Onyxbot", "Onyx bot FF", "ONYX BOT ", "ONYX BOT "]
 global.channelRD = await getRandomChannel()
 
 //fechas
@@ -68,9 +68,9 @@ var canal = ''
 var canal2 = ''
 var canal3 = ''
 var canal4 = ''
-var git = 'https://github.com/Ivanmods16' 
+var git = '' 
 var youtube = '' 
-var github = 'https://github.com/Ivanmods16/Yagami-Bot-MD'  
+var github = ''  
 var dash = ''
 var panel = ''
 var status = ''
@@ -109,9 +109,9 @@ global.fake = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo
 }}, { quoted: m }
 
 global.icono = [ 
-'https://qu.ax/uhHNO.jpg',
-'https://qu.ax/bPcSF.jpg',
-'https://qu.ax/JCwVr.jpg'
+'',
+'',
+''
 ].getRandom()
 
 global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, serverMessageId: 100, newsletterName: channelRD.name, }, externalAdReply: { showAdAttribution: true, title: namebot, body: dev, mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, }, }}
