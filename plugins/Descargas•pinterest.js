@@ -17,7 +17,7 @@ let handler = async (_0x10bd40, {
  _0x9c7141.reply(_0x10bd40.chat, '🚩 *Descargando su imagen...*', _0x10bd40, {
  contextInfo: { externalAdReply :{ mediaUrl: null, mediaType: 1, showAdAttribution: true,
  title: packname,
- body: dev,
+ body: wm,
  previewType: 0, thumbnail: icons,
  sourceUrl: channel }}})
   async function _0x3f3fc7(_0x5f4723) {
@@ -52,7 +52,7 @@ let handler = async (_0x10bd40, {
         'text': "Imagen -" + (" " + _0x2913ed++)
       }),
       'footer': proto.Message.InteractiveMessage.Footer.fromObject({
-        'text': dev
+        'text': textbot
       }),
       'header': proto.Message.InteractiveMessage.Header.fromObject({
         'title': '',
@@ -101,6 +101,7 @@ let handler = async (_0x10bd40, {
 handler.help = ["pinterest"];
 handler.tags = ["buscador"];
 handler.estrellas = 1;
-handler.register = true;
+handler.group = true;
+handler.register = true
 handler.command = ['pinterest'];
 export default handler;
