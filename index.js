@@ -7,13 +7,13 @@ import cfonts from 'cfonts';
 import { createInterface } from 'readline';
 import yargs from 'yargs';
 import chalk from 'chalk';
-console.log('\n♡ Iniciando YagamiBot ♡');
+console.log('\n♡ Iniciando Onyx♡');
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const require = createRequire(__dirname);
 const { name, description, author, version } = require(join(__dirname, './package.json'));
 const { say } = cfonts;
 const rl = createInterface(process.stdin, process.stdout);
-say('Yagami\nBot-MD', {
+say('Onyx\nBot-MD', {
 font: 'block',
 align: 'center',
 colors: ['red']
@@ -23,7 +23,7 @@ font: 'chrome',
 align: 'center',
 colors: ['red']
 });
-say(`Bot creado por ivan`, {
+say(`Bot creado por Ricardo`, {
 font: 'console',
 align: 'center',
 colors: ['yellow']
