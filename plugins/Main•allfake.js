@@ -33,7 +33,7 @@ global.ofcbot = `${conn.user.jid.split('@')[0]}`
 global.asistencia = 'wa.me/595992667005'
 global.namechannel = 'onyx bot 🤖'
 global.listo = '🌱 *Aquí tienes onyx bot*'
-global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/FfneO.jpg')
+global.fotoperfil = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://qu.ax/vVyRP.png')
 
 //ids channel
 global.channelid = ''
@@ -109,9 +109,9 @@ global.fake = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo
 }}, { quoted: m }
 
 global.icono = [ 
-'',
-'',
-''
+'https://qu.ax/vVyRP.png',
+'https://qu.ax/vVyRP.png',
+'https://qu.ax/vVyRP.png'
 ].getRandom()
 
 global.rcanal = { contextInfo: { isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, serverMessageId: 100, newsletterName: channelRD.name, }, externalAdReply: { showAdAttribution: true, title: namebot, body: dev, mediaUrl: null, description: null, previewType: "PHOTO", thumbnailUrl: icono, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false }, }, }}
