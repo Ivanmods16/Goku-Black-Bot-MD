@@ -30,19 +30,19 @@ let totalreg = Object.keys(global.db.data.users).length
 let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let mentionedJid = [who]
-let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/QGAVS.jpg')
+let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://qu.ax/vVyRP.png')
 let taguser = '@' + m.sender.split("@s.whatsapp.net")[0]
-const img = ['https://i.ibb.co/dWPC0Gw/Jyhyun.jpg', 'https://i.ibb.co/dWPC0Gw/Jyhyun.jpg', 'https://i.ibb.co/dWPC0Gw/Jyhyun.jpg']
-let menu = `ρσ𝘄ҽɾҽ𝗱 Ⴆყ 𝗶ναи
+const img = ['https://qu.ax/vVyRP.png', 'https://qu.ax/vVyRP.png', 'https://qu.ax/vVyRP.png']
+let menu = `ρσ𝘄ҽɾҽ𝗱 Ⴆყ Ricardo 🚩 
 
-ㅤㅤㅤㅤ❀꯭ᩬ.  ꯭ \`𝗬αgαмι-𝗕ꪮᡶ\`   ɱҽиυ︩︪ρɾɳ𝘀ỉᩏꪖʅ
+ㅤㅤㅤㅤ❀꯭ᩬ.  ꯭ \`FN-𝗕ꪮᡶ\`   ɱҽиυ︩︪ρɾɳ𝘀ỉᩏꪖʅ
 ㅤㅤㅤ¡ вιєивєиι∂σ  αℓ  \`мє𝗻ꪊ\` !    ֵ  ՙ🍁ຼ
 > ㅤㅤ${taguser}*ㅤㅤ   ۟ ۟ ۟    ⁽  😊+ ⁾
 ㅤㅤㅤㅤㅤ  ⁀⏝ܸ֘ ͝ ⏝ܸ֘ ͝ ⏝⁀
 
  ㅤ   𐍔𐍔 ㅤ   ͡ 𝗜ɳϝσ в𝗼т \`☆\`       ͗ ͗ ۪     花
  
-   ๑👑᳕ᷓ┊Author » \`@ivan\`
+   ๑👑᳕ᷓ┊Author » \`@ricardo\`
    ๑🍟᳕ᷓ┊Bot » \`${(conn.user.jid == global.conn.user.jid ? 'Oficial' : 'SubBot')}\`
    ๑☁️᳕ᷓ┊Librería » \`Baileys\`
    ๑📆᳕┊Fecha » \`${moment.tz('America/Asuncion').format('DD/MM/YY')}\`
@@ -518,7 +518,7 @@ let menu = `ρσ𝘄ҽɾҽ𝗱 Ⴆყ 𝗶ναи
 
 > ${global.dev}`.trim()
 
-await conn.sendMessage(m.chat, { image: { url: img.getRandom() }, caption: menu, contextInfo: { mentionedJid: [m.sender], isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, newsletterName: channelRD.name, serverMessageId: -1, }, forwardingScore: 999, externalAdReply: { title: '🌫️ 🅈⃓꯭⃛🄰⃓꯭⃛፝֟͝🄶⃓꯭⃛🄰⃓꯭⃛፝֟͝🄼⃓꯭⃛🄸⃓꯭⃛፝֟͝__🄱⃓꯭⃛🄾⃓꯭⃛፝֟͝🅃 🌫️', body: dev, thumbnailUrl: perfil, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false,
+await conn.sendMessage(m.chat, { image: { url: img.getRandom() }, caption: menu, contextInfo: { mentionedJid: [m.sender], isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: channelRD.id, newsletterName: channelRD.name, serverMessageId: -1, }, forwardingScore: 999, externalAdReply: { title: 'FN BOT', body: dev, thumbnailUrl: perfil, sourceUrl: redes, mediaType: 1, renderLargerThumbnail: false,
 }, }, gifPlayback: true, gifAttribution: 0 }, { quoted: null })
 await m.react(emojis)    
     
