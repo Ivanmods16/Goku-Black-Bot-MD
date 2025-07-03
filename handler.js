@@ -260,9 +260,9 @@ const user = (m.isGroup ? participants.find(u => conn.decodeJid(u.id) === m.send
 let numBot = (conn.user.lid || '').replace(/:.*/, '') || false
 const detectwhat2 = m.sender.includes('@lid') ? `${numBot}@lid` : conn.user.jid
 const bot = (m.isGroup ? participants.find(u => conn.decodeJid(u.id) == detectwhat2) : {}) || {}
-const isRAdmin = user?.admin == 'superadmin' || false
-const isAdmin = isRAdmin || user?.admin == 'admin' || false
-const isBotAdmin = bot?.admin || false
+const isRAdmin = user?.admin === 'superadmin' || false
+const isAdmin = isRAdmin || user?.admin === 'admin' || false
+const isBotAdmin = !!bot?.admin
 
 const ___dirname = path.join(path.dirname(fileURLToPath(import.meta.url)), './plugins')
 for (let name in global.plugins) {
