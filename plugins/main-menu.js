@@ -6,6 +6,7 @@ let handler = async (m, { conn, args }) => {
     let totalreg = Object.keys(global.db.data.users).length
 
     let txt = `
+Comandos simples. Bot en desarrollo.
 
 Hola! Soy *${botname}* (｡•̀ᴗ-)✧
 Aquí tienes la lista de comandos principales:
@@ -37,8 +38,7 @@ Aquí tienes la lista de comandos principales:
 > Dar admin a un usuario.
 ᰔᩚ *#depromote* [mención]
 > Quitar admin a un usuario.
-
-Comandos simples. Bot en desarrollo.`.trim()
+`.trim()
 
     await conn.sendMessage(m.chat, { 
         text: txt,
