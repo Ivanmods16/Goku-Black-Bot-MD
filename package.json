@@ -1,32 +1,33 @@
 {
-  "name": "SenkoBot-MD",
-  "version": "1.0.6",
-  "description": "Super SenkoBot",
-  "main": "senko/start.js",
+  "name": "Luffy-Bot",
+  "version": "2.0.0",
+  "description": "Bot Basado En Anime y hecho para los fans",
+  "main": "index.js",
   "type": "module",
   "directories": {
-    "lib": "senko/lib",
+    "lib": "lib",
+    "src": "src",
     "plugins": "plugins"
   },
   "scripts": {
-    "start": "node senko/start.js",
-    "qr": "node senko/start.js qr",
-    "code": "node senko/start.js code",
+    "start": "node index.js",
+    "qr": "node index.js qr",
+    "code": "node index.js code",
     "test": "node test.js",
-    "test2": "nodemon senko/start.js",
+    "test2": "nodemon index.js",
     "eslint": "eslint .",
     "eslintfix": "eslint --fix ."
   },
-  "homepage": "https://github.com/OfcKing/SenkoBot-MD",
+  "homepage": "https://github.com/ws/we.git",
   "author": {
-    "name": "OfcKing"
+    "name": "Luffy"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OfcKing/SenkoBot-MD.git"
+    "url": "https://github.com/ws/we.git"
   },
   "bugs": {
-    "url": "https://github.com/OfcKing/SenkoBot-MD/issues"
+    "url": "https://github.com/ws/we.git"
   },
 "license": "MIT-License",
 "dependencies": {
