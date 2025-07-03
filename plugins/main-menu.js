@@ -1,72 +1,70 @@
-let handler = async (m, { conn, args }) => {
-    let userId = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
-    let name = conn.getName(userId)
-    let _uptime = process.uptime() * 1000
-    let uptime = clockString(_uptime)
-    let totalreg = Object.keys(global.db.data.users).length
+import sharp from "sharp";
+import { promises as fs } from 'fs';
+import moment from "moment-timezone";
 
-    let txt = `
-Comandos simples. Bot en desarrollo.
+const docPath = "./src/doc_image.jpg";
+const imgPath = "./src/menu.jpg";
 
-Hola! Soy *${botname}* (｡•̀ᴗ-)✧
-Aquí tienes la lista de comandos principales:
-╭┈ ↷
-│ᰔᩚ Cliente » @${userId.split('@')[0]}
-│❀ Modo » Público
-│ⴵ Activada » ${uptime}
-│✰ Usuarios » ${totalreg}
-╰─────────────────
+let handler = async (m, { conn, usedPrefix }) => {
+    try {
+        m.react && m.react("🍂");
+        let name = await conn.getName(m.sender);
 
-• :･ﾟ⊹˚• \`『 DESCARGAS 』\` •˚⊹:･ﾟ•
-ᰔᩚ *#play* 
-> Descarga música de YouTube.
-ᰔᩚ *#tiktok*
-> Descarga videos de TikTok.
-ᰔᩚ *#fb*
-> Descarga videos de Facebook.
-ᰔᩚ *#ig*
-> Descarga contenido de Instagram.
+        global.menutext = `
+Comandos disponibles:
 
-• :･ﾟ⊹˚• \`『 STICKERS 』\` •˚⊹:･ﾟ•
-ᰔᩚ *#sticker* 
-> Crea un sticker de imagen o video.
+• play
+• sticker
+• tiktok
+• fb
+• ig
+• kick
+• promote
+• depromote
+        `.trim();
 
-• :･ﾟ⊹˚• \`『 GRUPOS 』\` •˚⊹:･ﾟ•
-ᰔᩚ *#kick* [número/mención]
-> Elimina un usuario del grupo.
-ᰔᩚ *#promote* [mención]
-> Dar admin a un usuario.
-ᰔᩚ *#depromote* [mención]
-> Quitar admin a un usuario.
-`.trim()
+        let cap = global.menutext;
+        let txt = `🍄 ${ucapan()}, @${m.sender.split("@")[0]} !\n\n${cap}`;
+        let mention = conn.parseMention ? conn.parseMention(txt) : [];
 
-    await conn.sendMessage(m.chat, { 
-        text: txt,
-        contextInfo: {
-            mentionedJid: [m.sender, userId],
-            isForwarded: true,
-            externalAdReply: {
-                title: botname,
-                body: textbot,
-                thumbnailUrl: banner,
-                sourceUrl: redes,
-                mediaType: 1,
-                showAdAttribution: true,
-                renderLargerThumbnail: true,
-            },
-        },
-    }, { quoted: m })
+        let imager = await sharp(docPath)
+            .resize(400, 400)
+            .jpeg()
+            .toBuffer();
+
+        let img = await fs.readFile(imgPath);
+
+        await conn.sendMessage(
+            m.chat,
+            {
+                document: img,
+                fileName: "MENU-LUFFY-BOT.png",
+                mimetype: "image/png",
+                caption: txt,
+                fileLength: 1900,
+                jpegThumbnail: imager,
+                contextInfo: {
+                    mentionedJid: mention,
+                    isForwarded: true,
+                    forwardingScore: 999,
+                    externalAdReply: {
+                        title: "",
+                        body: `あ ${global.w(m.chat, "❎ Error al mostrar el menú principal : " + e, m);
+    }
+};
+
+handler.command = ["menu", "help", "menú", "commands", "comandos", "?"];
+export default handler;
+
+function ucapan() {
+    const time = moment.tz("America/Los_Angeles").format("HH");
+    if (time >= 18) return "Good night.";
+    if (time >= 15) return "Good afternoon.";
+    if (time >= 10) return "Good afternoon.";
+    if (time >= 4) return "Good morning.";
+    return "Hello.";
 }
 
-handler.help = ['menu']
-handler.tags = ['main']
-handler.command = ['menu', 'menú', 'help']
-
-export default handler
-
-function clockString(ms) {
-    let seconds = Math.floor((ms / 1000) % 60)
-    let minutes = Math.floor((ms / (1000 * 60)) % 60)
-    let hours = Math.floor((ms / (1000 * 60 * 60)) % 24)
-    return `${hours}h ${minutes}m ${seconds}s`
-}
+global.wm = global.wm || "Luffy-Bot";
+global.repositorio = global.repositorio || "https://github.com/Luffy-Bot";
+global.footer = global.footer || "Luffy-Bot • Menú";
