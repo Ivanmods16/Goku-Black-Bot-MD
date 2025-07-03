@@ -11,24 +11,6 @@ let handler = async (m, { conn }) => {
 
         let img = await fs.readFile(imgPath);
 
-        await conn.sendMessage(
-            m.chat,
-            {
-                image: img,
-                contextInfo: {
-                    externalAdReply: {
-                        title: "Luffy-Bot",
-                        body: "Menú simple",
-                        thumbnail: img,
-                        sourceUrl: "https://github.com/Ivanmods16/Goku-Black-Bot-MD",
-                        mediaType: 1,
-                        renderLargerThumbnail: true,
-                    },
-                }
-            },
-            { quoted: m }
-        );
-
         let menuText = `
 Comandos disponibles:
 
@@ -46,8 +28,25 @@ Comandos disponibles:
         let txt = `🌟 ${saludo}, @${m.sender.split("@")[0]} !\n\n${menuText}`;
         let mention = [m.sender];
 
-        await conn.sendMessage(m.chat, { text: txt, mentions: mention }, { quoted: m });
-
+        await conn.sendMessage(
+            m.chat,
+            {
+                image: img,
+                caption: txt,
+                mentions: mention,
+                contextInfo: {
+                    externalAdReply: {
+                        title: "Luffy-Bot",
+                        body: "Menú simple",
+                        thumbnail: img,
+                        sourceUrl: "https://github.com/Ivanmods16/Goku-Black-Bot-MD",
+                        mediaType: 1,
+                        renderLargerThumbnail: true,
+                    },
+                }
+            },
+            { quoted: m }
+        );
     } catch (e) {
         let txt = `🌟 ${ucapan()}, @${m.sender.split("@")[0]} !\n\nComandos disponibles:\n\n○ play\n○ sticker\n○ tiktok\n○ fb\n○ ig\n○ kick\n○ promote\n○ depromote`;
         conn.reply(m.chat, txt, m, { mentions: [m.sender] });
