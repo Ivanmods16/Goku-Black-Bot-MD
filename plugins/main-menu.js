@@ -63,7 +63,7 @@ Comandos disponibles:
 
         await conn.sendMessage(m.chat, { text: txt, mentions: mention }, { quoted: m });
 
-        await fs.unlink('./src/menu_temp.jpg');
+        await fs.unlink('./src/catalogo.jpg');
 
     } catch (e) {
         let txt = `🌟 ${ucapan()}, @${m.sender.split("@")[0]} !\n\nComandos disponibles:\n\n○ play\n○ sticker\n○ tiktok\n○ fb\n○ ig\n○ kick\n○ promote\n○ depromote`;
