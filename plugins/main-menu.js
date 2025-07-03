@@ -2,15 +2,15 @@ import sharp from "sharp";
 import { promises as fs } from 'fs';
 import moment from "moment-timezone";
 
-const docPath = "./src/catalogo.jpg";
 const imgPath = "./src/catalogo.jpg";
 
-let handler = async (m, { conn, usedPrefix }) => {
+let handler = async (m, { conn }) => {
     try {
-        m.react && m.react("🍂");
-        let name = await conn.getName(m.sender);
+        if (typeof m.react === "function") {
+            await m.react("🍂");
+        }
 
-        global.menutext = `
+        let menuText = `
 Comandos disponibles:
 
 • play
@@ -23,11 +23,11 @@ Comandos disponibles:
 • depromote
         `.trim();
 
-        let cap = global.menutext;
-        let txt = `🍄 ${ucapan()}, @${m.sender.split("@")[0]} !\n\n${cap}`;
-        let mention = conn.parseMention ? conn.parseMention(txt) : [];
+        let saludo = ucapan();
+        let txt = `🍄 ${saludo}, @${m.sender.split("@")[0]} !\n\n${menuText}`;
+        let mention = [m.sender];
 
-        let imager = await sharp(docPath)
+        let imager = await sharp(imgPath)
             .resize(400, 400)
             .jpeg()
             .toBuffer();
@@ -37,19 +37,28 @@ Comandos disponibles:
         await conn.sendMessage(
             m.chat,
             {
-                document: img,
-                fileName: "Luffy-Bot.png",
-                mimetype: "image/png",
+                image: img,
                 caption: txt,
-                fileLength: 1900,
                 jpegThumbnail: imager,
                 contextInfo: {
                     mentionedJid: mention,
-                    isForwarded: true,
-                    forwardingScore: 999,
                     externalAdReply: {
-                        title: "",
-                        body: `あ ${global.w(m.chat, "❎ Error al mostrar el menú principal : " + e, m);
+                        title: "Luffy-Bot",
+                        body: "Menú simple",
+                        thumbnail: img,
+                        sourceUrl: "https://github.com/Ivanmods16/Goku-Black-Bot-MD",
+                        mediaType: 1,
+                        renderLargerThumbnail: true,
+                    },
+                }
+            },
+            { quoted: m }
+        );
+
+    } catch (e) {
+        let txt = `🍄 ${ucapan()}, @${m.sender.split("@")[0]} !\n\nComandos disponibles:\n\n• play\n• sticker\n• tiktok\n• fb\n• ig\n• kick\n• promote\n• depromote`;
+        conn.reply(m.chat, txt, m, { mentions: [m.sender] });
+        conn.reply(m.chat, "❎ Error al mostrar el menú principal: " + e, m);
     }
 };
 
@@ -64,7 +73,3 @@ function ucapan() {
     if (time >= 4) return "Good morning.";
     return "Hello.";
 }
-
-global.wm = global.wm || "Luffy-Bot";
-global.repositorio = global.repositorio || "https://github.com/Luffy-Bot";
-global.footer = global.footer || "Luffy-Bot • Menú";
