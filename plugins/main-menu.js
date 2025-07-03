@@ -1,76 +1,85 @@
+import sharp from "sharp";
 import { promises as fs } from 'fs';
-import { PDFDocument, rgb, StandardFonts } from 'pdf-lib';
+import moment from "moment-timezone";
 
 const imgPath = "./src/catalogo.jpg";
+const pdfPath = "./src/catalogo.pdf";
 
 let handler = async (m, { conn }) => {
     try {
         if (typeof m.react === "function") {
-            await m.react("🍂");
+            await m.react("🌟");
         }
 
-        const user = db.data.users[m.sender] || {};
-        const registrado = user.registered ? "Sí" : "No";
-        const exp = user.exp || 0;
-        const level = user.level || 0;
-        const yenes = user.yenes || 0;
+        let imgBuffer = await fs.readFile(imgPath);
+        await sharp(imgBuffer)
+            .resize(900)
+            .jpeg()
+            .toFile('./src/catalogo.jpg');
+        await sharp('./src/catalogo.jpg')
+            .pdf()
+            .toFile(pdfPath);
 
-        const comandos = [
-            "sticker", "tiktok", "ig", "fb", "play",
-            "promote", "demote", "kick"
-        ].map(cmd => `• ${cmd}`).join('\n');
+        let pdfBuffer = await fs.readFile(pdfPath);
 
-        const info = 
-`👤 Usuario: @${m.sender.split('@')[0]}
-📋 Registrado: ${registrado}
-🏅 Nivel: ${level}
-✨ Exp: ${exp}
-💴 Yenes: ${yenes}
+        let menuText = `
+Comandos disponibles:
 
-📖 Comandos disponibles:
-${comandos}
-`;
+○ 𝚙𝚕𝚊𝚢
+○ 𝚜𝚝𝚒𝚌𝚔𝚎𝚛
+○ 𝚝𝚒𝚔𝚝𝚘𝚔
+○ 𝚏𝚋
+○ 𝚒𝚐
+○ 𝚔𝚒𝚌𝚔
+○ 𝚙𝚛𝚘𝚖𝚘𝚝𝚎
+○ 𝚍𝚎𝚙𝚛𝚘𝚖𝚘𝚝𝚎
+        `.trim();
 
-        let img = await fs.readFile(imgPath);
-
-        const pdfDoc = await PDFDocument.create();
-        const jpgImage = await pdfDoc.embedJpg(img);
-        const page = pdfDoc.addPage([jpgImage.width, jpgImage.height + 200]);
-
-        page.drawImage(jpgImage, {
-            x: 0,
-            y: 200,
-            width: jpgImage.width,
-            height: jpgImage.height,
-        });
-
-        const font = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
-        page.drawText(info, {
-            x: 30,
-            y: 120,
-            size: 18,
-            font,
-            color: rgb(0, 0, 0),
-            maxWidth: jpgImage.width - 60,
-            lineHeight: 24
-        });
-
-        const pdfBytes = await pdfDoc.save();
+        let saludo = ucapan();
+        let txt = `🌟 ${saludo}, @${m.sender.split("@")[0]} !\n\n${menuText}`;
+        let mention = [m.sender];
 
         await conn.sendMessage(
             m.chat,
             {
-                document: Buffer.from(pdfBytes),
-                mimetype: 'application/pdf',
-                fileName: 'menu.pdf',
-                caption: 'Menú en PDF con información de usuario'
+                document: pdfBuffer,
+                fileName: "MENU-LUFFY-BOT.pdf",
+                mimetype: "application/pdf",
+                jpegThumbnail: imgBuffer,
+                contextInfo: {
+                    mentionedJid: mention,
+                    externalAdReply: {
+                        title: "Luffy-Bot",
+                        body: "Menú PDF",
+                        thumbnail: imgBuffer,
+                        sourceUrl: "https://github.com/Ivanmods16/Goku-Black-Bot-MD",
+                        mediaType: 1,
+                        renderLargerThumbnail: true,
+                    },
+                }
             },
             { quoted: m }
         );
+
+        await conn.sendMessage(m.chat, { text: txt, mentions: mention }, { quoted: m });
+
+        await fs.unlink('./src/menu_temp.jpg');
+
     } catch (e) {
-        conn.reply(m.chat, "❎ Error al mostrar el menú en PDF: " + e, m);
+        let txt = `🌟 ${ucapan()}, @${m.sender.split("@")[0]} !\n\nComandos disponibles:\n\n○ play\n○ sticker\n○ tiktok\n○ fb\n○ ig\n○ kick\n○ promote\n○ depromote`;
+        conn.reply(m.chat, txt, m, { mentions: [m.sender] });
+        conn.reply(m.chat, "❎ Error al mostrar el menú principal (PDF): " + e, m);
     }
 };
 
 handler.command = ["menu", "help", "menú", "commands", "comandos", "?"];
 export default handler;
+
+function ucapan() {
+    const time = moment.tz("America/Los_Angeles").format("HH");
+    if (time >= 18) return "Good night.";
+    if (time >= 15) return "Good afternoon.";
+    if (time >= 10) return "Good afternoon.";
+    if (time >= 4) return "Good morning.";
+    return "Hello.";
+}
