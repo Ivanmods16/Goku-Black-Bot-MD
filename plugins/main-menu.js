@@ -5,33 +5,46 @@ const imgPath = "./src/catalogo.jpg";
 
 let handler = async (m, { conn }) => {
     try {
-        if (typeof m.react === "function") {
-            await m.react("🌟");
-        }
+        if (typeof m.react === "function") await m.react("🌟");
+
+        const botname = typeof global.botname !== "undefined" ? global.botname : "Luffy-Bot";
+        const userId = m.sender;
+        const uptime = clockString(process.uptime() * 1000);
+        const totalreg = global.db && global.db.data && global.db.data.users ? Object.keys(global.db.data.users).length : "N/A";
+        const totalCommands = typeof global.plugins === "object" ? Object.keys(global.plugins).length : "N/A";
 
         let img = await fs.readFile(imgPath);
 
         let menuText = `
-Comandos disponibles:
+¡Hola! Soy *${botname}*
 
-○ 𝚙𝚕𝚊𝚢
-○ 𝚜𝚝𝚒𝚌𝚔𝚎𝚛
-○ 𝚝𝚒𝚔𝚝𝚘𝚔
-○ 𝚏𝚋
-○ 𝚒𝚐
-○ 𝚔𝚒𝚌𝚔
-○ 𝚙𝚛𝚘𝚖𝚘𝚝𝚎
-○ 𝚍𝚎𝚙𝚛𝚘𝚖𝚘𝚝𝚎
-        `.trim();
+ᰔᩚ Cliente: @${userId.split('@')[0]}
+✦ Modo: Público
+ⴵ Activa: ${uptime}
+✰ Usuarios: ${totalreg}
+✧ Comandos: ${totalCommands}
+🜸 Baileys: Multi Device
+
+Comandos disponibles:
+✰ play
+✰ sticker
+✰ tiktok
+✰ fb
+✰ ig
+✰ kick
+✰ promote
+✰ depromote
+`.trim();
 
         await conn.sendMessage(
             m.chat,
             {
                 image: img,
                 caption: menuText,
+                mentions: [userId],
                 contextInfo: {
                     externalAdReply: {
-                        title: "Luffy-Bot",
+                        title: botname,
                         body: saludo(),
                         thumbnail: img,
                         sourceUrl: "https://github.com/Ivanmods16/Goku-Black-Bot-MD",
@@ -56,4 +69,11 @@ function saludo() {
     if (hora >= 12) return "Buenas tardes.";
     if (hora >= 6) return "Buenos días.";
     return "Hola.";
+}
+
+function clockString(ms) {
+    let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000);
+    let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60;
+    let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60;
+    return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':');
 }
