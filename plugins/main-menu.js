@@ -2,8 +2,8 @@ import sharp from "sharp";
 import { promises as fs } from 'fs';
 import moment from "moment-timezone";
 
-const docPath = "./src/doc_image.jpg";
-const imgPath = "./src/menu.jpg";
+const docPath = "./src/catalogo.jpg";
+const imgPath = "./src/catalogo.jpg";
 
 let handler = async (m, { conn, usedPrefix }) => {
     try {
@@ -38,7 +38,7 @@ Comandos disponibles:
             m.chat,
             {
                 document: img,
-                fileName: "MENU-LUFFY-BOT.png",
+                fileName: "Luffy-Bot.png",
                 mimetype: "image/png",
                 caption: txt,
                 fileLength: 1900,
