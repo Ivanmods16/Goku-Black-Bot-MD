@@ -24,20 +24,15 @@ Comandos disponibles:
 ○ 𝚍𝚎𝚙𝚛𝚘𝚖𝚘𝚝𝚎
         `.trim();
 
-        let saludo = ucapan();
-        let txt = `🌟 ${saludo}, @${m.sender.split("@")[0]} !\n\n${menuText}`;
-        let mention = [m.sender];
-
         await conn.sendMessage(
             m.chat,
             {
                 image: img,
-                caption: txt,
-                mentions: mention,
+                caption: menuText,
                 contextInfo: {
                     externalAdReply: {
                         title: "Luffy-Bot",
-                        body: "Menú simple",
+                        body: saludo(),
                         thumbnail: img,
                         sourceUrl: "https://github.com/Ivanmods16/Goku-Black-Bot-MD",
                         mediaType: 1,
@@ -48,8 +43,6 @@ Comandos disponibles:
             { quoted: m }
         );
     } catch (e) {
-        let txt = `🌟 ${ucapan()}, @${m.sender.split("@")[0]} !\n\nComandos disponibles:\n\n○ play\n○ sticker\n○ tiktok\n○ fb\n○ ig\n○ kick\n○ promote\n○ depromote`;
-        conn.reply(m.chat, txt, m, { mentions: [m.sender] });
         conn.reply(m.chat, "❎ Error al mostrar el menú principal: " + e, m);
     }
 };
@@ -57,11 +50,10 @@ Comandos disponibles:
 handler.command = ["menu", "help", "menú", "commands", "comandos", "?"];
 export default handler;
 
-function ucapan() {
-    const time = moment.tz("America/Los_Angeles").format("HH");
-    if (time >= 18) return "Good night.";
-    if (time >= 15) return "Good afternoon.";
-    if (time >= 10) return "Good afternoon.";
-    if (time >= 4) return "Good morning.";
-    return "Hello.";
+function saludo() {
+    const hora = moment.tz("America/Los_Angeles").format("HH");
+    if (hora >= 18) return "Buenas noches.";
+    if (hora >= 12) return "Buenas tardes.";
+    if (hora >= 6) return "Buenos días.";
+    return "Hola.";
 }
