@@ -7,7 +7,11 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     const res = await fetch(url);
     const data = await res.json();
     if (!data.status || !data.result || !data.result.url) return m.reply('No se encontró ninguna imagen.');
-    await conn.sendMessage(m.chat, { image: { url: data.result.url }, caption: `Resultado para: ${text}` }, { quoted: m });
+    await conn.sendMessage(
+      m.chat,
+      { image: { url: data.result.url }, caption: `Esto fue encontrado:` },
+      { quoted: m }
+    );
     if (typeof m.react === 'function') m.react('✅');
   } catch {
     await m.reply('Error al consultar la API.');
