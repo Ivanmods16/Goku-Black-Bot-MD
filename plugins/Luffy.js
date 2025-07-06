@@ -1,49 +1,67 @@
-import fetch from 'node-fetch';
-
-function getFlag(code = '') {
-  if (!code) return '';
-  // Convierte código país a bandera (por ejemplo, "ES" => 🇪🇸)
-  return code
-    .toUpperCase()
-    .replace(/./g, char => 
-      String.fromCodePoint(127397 + char.charCodeAt())
-    );
-}
-
-let handler = async (m, { conn, text, usedPrefix, command }) => {
-  let number = text;
-  if (m.mentionedJid && m.mentionedJid.length > 0) {
-    number = m.mentionedJid[0].replace(/\D/g, '');
-  }
-  if (!number) 
-    return m.reply(`Envía el número o menciona a un usuario.\nEjemplo: ${usedPrefix + command} 34613288116`);
-
-  try {
-    const url = `https://delirius-apiofc.vercel.app/tools/country?text=${encodeURIComponent(number)}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    if (!data.status || !data.result || !data.result.country) return m.reply('No se pudo identificar el país.');
-    const flag = getFlag(data.result.code);
-    let nameMention = '';
-    if (m.mentionedJid && m.mentionedJid.length > 0) {
-      nameMention = `@${number}`;
-    }
-    await conn.sendMessage(
-      m.chat, 
-      { 
-        text: `${flag} El país es: ${data.result.country} ${nameMention}`.trim(),
-        mentions: m.mentionedJid ? m.mentionedJid : []
-      }, 
-      { quoted: m }
-    );
-    if (typeof m.react === 'function') m.react('✅');
-  } catch {
-    await m.reply('Error al consultar la API.');
-  }
+const opciones = ['piedra', 'papel', 'tijera'];
+const emojis = {
+  piedra: '🪨',
+  papel: '📄',
+  tijera: '✂️'
 };
 
-handler.command = ['pais', 'country'];
-handler.tags = ['utilidad'];
+const handler = async (m, { conn, text, usedPrefix, command }) => {
+  let eleccionUsuario = text?.toLowerCase()?.trim();
+
+  if (!opciones.includes(eleccionUsuario)) {
+    let menu = `*Juguemos Piedra, Papel o Tijera*\n\nElige una opción escribiendo:\n${usedPrefix + command} piedra\n${usedPrefix + command} papel\n${usedPrefix + command} tijera\n\n¡O toca un botón!`;
+    return await conn.sendMessage(
+      m.chat,
+      {
+        text: menu,
+        buttons: [
+          { buttonId: `${usedPrefix + command} piedra`, buttonText: { displayText: `${emojis.piedra} Piedra` } },
+          { buttonId: `${usedPrefix + command} papel`, buttonText: { displayText: `${emojis.papel} Papel` } },
+          { buttonId: `${usedPrefix + command} tijera`, buttonText: { displayText: `${emojis.tijera} Tijera` } },
+        ],
+        headerType: 1,
+      },
+      { quoted: m }
+    );
+  }
+
+  const eleccionBot = opciones[Math.floor(Math.random() * 3)];
+
+  let resultado = '';
+  if (eleccionUsuario === eleccionBot) {
+    resultado = '¡Empate! 😐';
+  } else if (
+    (eleccionUsuario === 'piedra' && eleccionBot === 'tijera') ||
+    (eleccionUsuario === 'tijera' && eleccionBot === 'papel') ||
+    (eleccionUsuario === 'papel' && eleccionBot === 'piedra')
+  ) {
+    resultado = '¡Ganaste! 🎉';
+  } else {
+    resultado = 'Perdiste 😢';
+  }
+
+  const body = `*Piedra, Papel o Tijera*\n\nTu elección: ${emojis[eleccionUsuario]} *${eleccionUsuario}*\nMi elección: ${emojis[eleccionBot]} *${eleccionBot}*\n\n${resultado}`;
+
+  await conn.sendMessage(
+    m.chat,
+    {
+      text: body,
+      buttons: [
+        { buttonId: `${usedPrefix + command} piedra`, buttonText: { displayText: `${emojis.piedra} Piedra` } },
+        { buttonId: `${usedPrefix + command} papel`, buttonText: { displayText: `${emojis.papel} Papel` } },
+        { buttonId: `${usedPrefix + command} tijera`, buttonText: { displayText: `${emojis.tijera} Tijera` } },
+      ],
+      headerType: 1,
+    },
+    { quoted: m }
+  );
+
+  if (typeof m.react === "function") m.react('✅');
+};
+
+handler.command = ['ppt', 'piedrapapeltijera'];
+handler.tags = ['juegos'];
 handler.limit = 3;
+handler.group = false;
 
 export default handler;
