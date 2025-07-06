@@ -1,23 +1,21 @@
 import fetch from 'node-fetch';
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) return m.reply(`Escribe tu pregunta. Ejemplo: ${usedPrefix + command} ¿Quién es el presidente de Paraguay?`);
+  if (!text) return m.reply(`Escribe lo que quieres buscar.\nEjemplo: ${usedPrefix + command} anime alya`);
   try {
-    const url = `https://api.dorratz.com/ai/gpt?prompt=${encodeURIComponent(text)}?country=paraguay`;
+    const url = `https://api.dorratz.com/v2/pix-ai?prompt=${encodeURIComponent(text)}`;
     const res = await fetch(url);
     const data = await res.json();
-    let respuesta = data.result || 'No se obtuvo una respuesta válida.';
-    respuesta = respuesta.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim(); // Elimina saltos de línea y espacios extra
-    await conn.sendMessage(m.chat, { text: respuesta }, { quoted: m });
+    if (!data.status || !data.result || !data.result.url) return m.reply('No se encontró ninguna imagen.');
+    await conn.sendMessage(m.chat, { image: { url: data.result.url }, caption: `Resultado para: ${text}` }, { quoted: m });
     if (typeof m.react === 'function') m.react('✅');
   } catch {
     await m.reply('Error al consultar la API.');
   }
 };
 
-handler.help = ['luffy <texto>'];
-handler.tags = ['ai'];
-handler.command = ['luffy'];
-handler.limit = 5;
+handler.command = ['pixai', 'pixart'];
+handler.tags = ['imagenes', 'ai'];
+handler.limit = 3;
 
 export default handler;
