@@ -1,32 +1,20 @@
 import fetch from 'node-fetch';
 
-const FLAGS = {
-  'España': '🇪🇸',
-  'Argentina': '🇦🇷',
-  'México': '🇲🇽',
-  'Venezuela': '🇻🇪',
-  'Colombia': '🇨🇴',
-  'Chile': '🇨🇱',
-  'Perú': '🇵🇪',
-  'Paraguay': '🇵🇾',
-  'Uruguay': '🇺🇾',
-  'Bolivia': '🇧🇴',
-  'Ecuador': '🇪🇨',
-  'Brasil': '🇧🇷',
-  'Estados Unidos': '🇺🇸',
-  // Código en desarrollo 
-};
+function getFlag(code = '') {
+  if (!code) return '';
+  // Convierte código país a bandera (por ejemplo, "ES" => 🇪🇸)
+  return code
+    .toUpperCase()
+    .replace(/./g, char => 
+      String.fromCodePoint(127397 + char.charCodeAt())
+    );
+}
 
-let handler = async (m, { conn, text, usedPrefix, command, args, mentions }) => {
+let handler = async (m, { conn, text, usedPrefix, command }) => {
   let number = text;
-
   if (m.mentionedJid && m.mentionedJid.length > 0) {
-    let mentioned = m.mentionedJid[0];
-    number = mentioned.replace(/[^\d]/g, '');
-    if (number.startsWith('0')) number = number.slice(1);
-    if (number.length < 8) return m.reply('No se pudo extraer el número del usuario mencionado.');
+    number = m.mentionedJid[0].replace(/\D/g, '');
   }
-
   if (!number) 
     return m.reply(`Envía el número o menciona a un usuario.\nEjemplo: ${usedPrefix + command} 34613288116`);
 
@@ -34,8 +22,8 @@ let handler = async (m, { conn, text, usedPrefix, command, args, mentions }) => 
     const url = `https://delirius-apiofc.vercel.app/tools/country?text=${encodeURIComponent(number)}`;
     const res = await fetch(url);
     const data = await res.json();
-    if (!data.status || !data.result) return m.reply('No se pudo identificar el país.');
-    const flag = FLAGS[data.result] || '';
+    if (!data.status || !data.result || !data.result.country) return m.reply('No se pudo identificar el país.');
+    const flag = getFlag(data.result.code);
     let nameMention = '';
     if (m.mentionedJid && m.mentionedJid.length > 0) {
       nameMention = `@${number}`;
@@ -43,7 +31,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args, mentions }) => 
     await conn.sendMessage(
       m.chat, 
       { 
-        text: `${flag ? flag + ' ' : ''}El país es: ${data.result} ${nameMention}`.trim(),
+        text: `${flag} El país es: ${data.result.country} ${nameMention}`.trim(),
         mentions: m.mentionedJid ? m.mentionedJid : []
       }, 
       { quoted: m }
