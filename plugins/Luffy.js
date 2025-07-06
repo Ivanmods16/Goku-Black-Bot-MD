@@ -1,11 +1,15 @@
-const opciones = ['piedra', 'papel', 'tijera'];
-const emojis = {
-  piedra: '🪨',
-  papel: '📄',
-  tijera: '✂️'
-};
+import fetch from 'node-fetch';
 
-const handler = async (m, { conn, text, usedPrefix, command }) => {
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+  let user = global.db.data.users[m.sender];
+  let expGanar = 100;
+  let expPerder = 0;
+  let coinGanar = 20;
+  let coinPerder = 15;
+  let moneda = global.moneda || '¥enes';
+
+  const opciones = ['piedra', 'papel', 'tijera'];
+  const emojis = { piedra: '🪨', papel: '📄', tijera: '✂️' };
   let eleccionUsuario = text?.toLowerCase()?.trim();
 
   if (!opciones.includes(eleccionUsuario)) {
@@ -26,21 +30,38 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
   }
 
   const eleccionBot = opciones[Math.floor(Math.random() * 3)];
-
   let resultado = '';
+  let exp = 0, coin = 0;
+
   if (eleccionUsuario === eleccionBot) {
     resultado = '¡Empate! 😐';
+    exp = 0;
+    coin = 0;
   } else if (
     (eleccionUsuario === 'piedra' && eleccionBot === 'tijera') ||
     (eleccionUsuario === 'tijera' && eleccionBot === 'papel') ||
     (eleccionUsuario === 'papel' && eleccionBot === 'piedra')
   ) {
     resultado = '¡Ganaste! 🎉';
+    exp = expGanar;
+    coin = coinGanar;
+    user.exp += expGanar;
+    user.coin += coinGanar;
   } else {
     resultado = 'Perdiste 😢';
+    exp = expPerder;
+    coin = -coinPerder;
+    user.coin -= coinPerder;
+    if (user.coin < 0) user.coin = 0;
   }
 
-  const body = `*Piedra, Papel o Tijera*\n\nTu elección: ${emojis[eleccionUsuario]} *${eleccionUsuario}*\nMi elección: ${emojis[eleccionBot]} *${eleccionBot}*\n\n${resultado}`;
+  const body =
+    `*Piedra, Papel o Tijera*\n\n` +
+    `Tu elección: ${emojis[eleccionUsuario]} *${eleccionUsuario}*\n` +
+    `Mi elección: ${emojis[eleccionBot]} *${eleccionBot}*\n\n` +
+    `${resultado}\n\n` +
+    `✨ *Exp*: ${exp}\n` +
+    `💸 *${moneda}*: ${coin > 0 ? '+' : ''}${coin}\n`;
 
   await conn.sendMessage(
     m.chat,
