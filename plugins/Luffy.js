@@ -8,24 +8,22 @@ import { useMultiFileAuthState, makeCacheableSignalKeyStore, fetchLatestBaileysV
 
 const pendingCodes = {}
 
-const handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
+const handler = async (m, { conn, args, usedPrefix, command }) => {
   let who = m.sender.replace(/[^0-9]/g, '')
 
   if (/^pedircodigo$/i.test(command)) {
     const code = (Math.floor(10000000 + Math.random() * 90000000)).toString()
     pendingCodes[who] = code
-    await conn.sendMessage(m.chat, { text: `👤 Tu código premium de vinculación es:\n*${code}*\n\nUsa:\n${usedPrefix}jadibot ${code}` }, { quoted: m })
+    await conn.sendMessage(m.chat, { text: `👤 Tu código de vinculación es:\n*${code}*\n\nUsa:\n${usedPrefix}jadibot ${code}` }, { quoted: m })
     return
   }
 
   const inputCode = args[0]
-  if (!isOwner) {
-    if (!inputCode || !pendingCodes[who] || inputCode !== pendingCodes[who]) {
-      await m.reply('❌ Debes pedir tu código premium primero usando *.pedircodigo* y luego usarlo aquí.')
-      return
-    }
-    delete pendingCodes[who]
+  if (!inputCode || !pendingCodes[who] || inputCode !== pendingCodes[who]) {
+    await m.reply('❌ Debes pedir tu código primero usando *.pedircodigo* y luego usarlo aquí.')
+    return
   }
+  delete pendingCodes[who]
 
   let id = `${who}`
   let pathGataJadiBot = path.join("./jadibts/", id)
@@ -74,7 +72,7 @@ const handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
     if (qr && mcode) {
       try {
         const secret = await sock.requestPairingCode(m.sender.split`@`[0])
-        let rtx2 = `🔐 Tu código de emparejamiento premium:`
+        let rtx2 = `🔐 Tu código de emparejamiento:`
         let drmer = Buffer.from("Solo válido para tu número y por tiempo limitado.", "utf-8")
         await conn.sendButton(
           m.chat,
