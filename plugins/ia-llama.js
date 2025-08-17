@@ -27,13 +27,13 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
   }
 }
 
-handler.help = ['ia']
-handler.tags = ['ai']
-handler.register = true
-handler.command = ['iallama']
-handler.group = true
+handler.help = ['ia'];
+handler.tags = ['ai'];
+handler.register = true;
+handler.command = ['iallama'];
+handler.group = false;
 
-export default handler
+export default handler;
 
 async function llamaIA(text, user) {
   try {
