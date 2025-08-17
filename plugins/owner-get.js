@@ -3,7 +3,7 @@ import { format } from 'util'
 
 let handler = async (m, { conn, text }) => {
 if (m.fromMe) return
-if (!/^https?:\/\//.test(text)) return m.reply(`Enter a *URL* of a page`)
+if (!/^https?:\/\//.test(text)) return m.reply(`Por favor, ingresa la *url* de la pagina`)
 let url = text
 await m.react('🕒')
 let res = await fetch(url)
