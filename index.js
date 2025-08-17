@@ -509,4 +509,4 @@ if (file !== 'creds.json') {
 const filePath = path.join(dir, file);
 unlinkSync(filePath, err => {
 if (err) {
-console.log(chalk.bold.re
+console.log(chalk.bold.red)
