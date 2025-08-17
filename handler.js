@@ -225,37 +225,53 @@ status: 0
 console.error(e)
 }
 
-        let _user = global.db.data && global.db.data.users && global.db.data.users[m.sender]
-        const groupMetadata = (m.isGroup ? ((conn.chats[m.chat] || {}).metadata || await this.groupMetadata(m.chat).catch(_ => null)) : {}) || {}
-        const participants = (m.isGroup ? groupMetadata.participants : []) || []
-        const cleanJid = jid => jid?.split(':')[0] || ''
-        const normalizeJid = jid => jid?.replace(/[^0-9]/g, '')
-        const senderNum = normalizeJid(m.sender)
-        const botNums = [this.user.jid, this.user.lid].map(j => normalizeJid(cleanJid(j)))
-        const user = m.isGroup ? participants.find(u => normalizeJid(u.id) === senderNum) : {}
-        const bot = m.isGroup ? participants.find(u => botNums.includes(normalizeJid(u.id))) : {}
-        const isRAdmin = user?.admin === 'superadmin' || false
-        const isAdmin = isRAdmin || user?.admin === 'admin' || false
-        const isBotAdmin = !!bot?.admin
-        const isROwner = [conn.decodeJid(global.conn.user.id), ...global.owner.map(([number]) => number)]
-            .map(v => v.replace(/[^0-9]/g, ''))
-            .includes(senderNum)
-        const isOwner = isROwner || m.fromMe
-        const isMods = isOwner || global.mods.map(v => v.replace(/[^0-9]/g, '')).includes(senderNum)
-        const isPrems = isROwner || global.prems.map(v => v.replace(/[^0-9]/g, '')).includes(senderNum) || _user.premium == true
-        if (opts['queque'] && m.text && !(isMods || isPrems)) {
-            let queque = this.msgqueque, time = 1000 * 5
-            const previousID = queque[queque.length - 1]
-            queque.push(m.id || m.key.id)
-            setInterval(async function () {
-                if (queque.indexOf(previousID) === -1) clearInterval(this)
-                await delay(time)
-            }, time)
-        }
-        if (m.isBaileys) { return }
-        m.exp += Math.ceil(Math.random() * 10)
-        let usedPrefix
-        const ___dirname = path.join(path.dirname(fileURLToPath(import.meta.url)), './plugins')
+let _user = global.db.data && global.db.data.users && global.db.data.users[m.sender]
+
+const detectwhat = m.sender.includes('@lid') ? '@lid' : '@s.whatsapp.net';
+const isROwner = [...global.owner.map(([number]) => number)].map(v => v.replace(/[^0-9]/g, '') + detectwhat).includes(m.sender)
+const isOwner = isROwner || m.fromMe
+const isMods = isROwner || global.mods.map(v => v.replace(/[^0-9]/g, '') + detectwhat).includes(m.sender)
+const isPrems = isROwner || global.prems.map(v => v.replace(/[^0-9]/g, '') + detectwhat).includes(m.sender) || _user.premium == true
+
+if (m.isBaileys) return
+if (opts['nyimak'])  return
+if (!isROwner && opts['self']) return
+if (opts['swonly'] && m.chat !== 'status@broadcast')  return
+if (typeof m.text !== 'string')
+m.text = ''
+
+if (opts['queque'] && m.text && !(isMods || isPrems)) {
+let queque = this.msgqueque, time = 1000 * 5
+const previousID = queque[queque.length - 1]
+queque.push(m.id || m.key.id)
+setInterval(async function () {
+if (queque.indexOf(previousID) === -1) clearInterval(this)
+await delay(time)
+}, time)
+}
+
+m.exp += Math.ceil(Math.random() * 10)
+
+let usedPrefix
+
+async function getLidFromJid(id, conn) {
+if (id.endsWith('@lid')) return id
+const res = await conn.onWhatsApp(id).catch(() => [])
+return res[0]?.lid || id
+}
+const senderLid = await getLidFromJid(m.sender, conn)
+const botLid = await getLidFromJid(conn.user.jid, conn)
+const senderJid = m.sender
+const botJid = conn.user.jid
+const groupMetadata = m.isGroup ? ((conn.chats[m.chat] || {}).metadata || await this.groupMetadata(m.chat).catch(_ => null)) : {}
+const participants = m.isGroup ? (groupMetadata.participants || []) : []
+const user = participants.find(p => p.id === senderLid || p.id === senderJid) || {}
+const bot = participants.find(p => p.id === botLid || p.id === botJid) || {}
+const isRAdmin = user?.admin === "superadmin"
+const isAdmin = isRAdmin || user?.admin === "admin"
+const isBotAdmin = !!bot?.admin
+
+const ___dirname = path.join(path.dirname(fileURLToPath(import.meta.url)), './plugins')
 for (let name in global.plugins) {
 let plugin = global.plugins[name]
 if (!plugin)
